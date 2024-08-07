@@ -1,0 +1,134 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: clamp(40%, 1% + 2vw, 62.5%);
+
+  --text-color: hsl(91, 10%, 35%);
+  --icon-color: hsl(91, 94%, 86%);
+  --color-secondary: hsl(200, 96%, 10%);
+  --bg-color: hsl(171, 52%, 52%);
+  --icon-forest-bg-color: hsl(95, 97%, 23%);
+  --icon-rain-bg-color: hsl(194, 97%, 31%);  
+  --icon-coffe-bg-color: hsl(28, 41%, 32%); 
+  --icon-fireplace-bg-color: hsl(10, 52%, 52%);
+}
+
+body {
+  display: grid;
+  height: 100vh;
+  place-content: center;
+  
+  background-color: var(--bg-color);
+}
+
+#app {
+  display: flex;
+  justify-items: center;
+  
+}
+
+.sr-only {
+  width: 1px;
+  height: 1px;
+  position: absolute;
+  overflow: hidden;
+
+  margin: -1px;
+  padding: 0px;
+  border: 0;
+  appearance: none;
+}
+
+.flex {
+  display: flex;
+  justify-content: center;
+}
+
+.bg-hide {
+  background-color: transparent;
+}
+
+#timerControls {
+  flex-direction: column;
+}
+
+#timerNumbers {
+  font-family: "Roboto", sans-serif;
+  font-size: 12.6rem;
+  font-weight: 500;
+  color: var(--text-color);
+}
+
+#timerButtons {
+  margin-top: 1.6rem;
+  justify-content: space-between;
+}
+
+#soundsControls {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 3.2rem;
+  margin-left: 19.2rem;
+}
+
+button {
+  background-color: transparent;
+  border: 0;
+  
+  font-size: 4.8rem;
+  
+  color: var(--icon-color);
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+#soundsControls button {
+  width: 13.8rem;
+  height: 15.2rem;
+  
+  border-radius: 2.4rem;
+  flex-shrink: 0;
+}
+
+#soundsControls  button.ph-tree:hover {
+  background: var(--icon-forest-bg-color);
+}
+
+#soundsControls  button.ph-cloud-rain:hover {
+  background: var(--icon-rain-bg-color);
+}
+
+#soundsControls  button.ph-storefront:hover {
+  background: var(--icon-coffe-bg-color);
+}
+
+#soundsControls  button.ph-flame:hover {
+  background: var(--icon-fireplace-bg-color);
+}
+
+.forestAudio-on button.ph-tree {
+  background-color: var(--icon-forest-bg-color)
+} 
+
+.rainAudio-on button.ph-cloud-rain {
+  background-color: var(--icon-rain-bg-color)
+}
+
+.coffeShopAudio-on button.ph-storefront {
+  background-color: var(--icon-coffe-bg-color)
+}
+
+.fireplaceAudio-on button.ph-flame {
+  background-color: var(--icon-fireplace-bg-color)
+}
+
+html:not(.forestAudio-on) button.ph-tree, html:not(.rainAudio-on) button.ph-cloud-rain,
+html:not(.coffeShopAudio-on) button.ph-storefront, html:not(.fireplaceAudio-on) button.ph-flame {
+  background: var(--color-secondary)
+}
