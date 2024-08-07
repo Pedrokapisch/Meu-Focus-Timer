@@ -132,3 +132,10 @@ html:not(.forestAudio-on) button.ph-tree, html:not(.rainAudio-on) button.ph-clou
 html:not(.coffeShopAudio-on) button.ph-storefront, html:not(.fireplaceAudio-on) button.ph-flame {
   background: var(--color-secondary)
 }
+
+html:not(.running) button.ph-pause-circle,
+html.running button.ph-play-circle,
+html.running button.ph-plus-circle,
+html.running button.ph-minus-circle {
+  color: var(--color-secondary);
+}

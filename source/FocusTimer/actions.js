@@ -22,11 +22,15 @@ export function reset() {
 }
 
 export function add5Minutes() {
-  timer.updateDisplay(Number(el.minutes.textContent) + 5)
+  if (state.isRunning != true) {
+    timer.updateDisplay(Number(minutes.textContent) + 5)    
+  }
 }
 
 export function remove5Minutes() {
-  timer.updateDisplay(Number(el.minutes.textContent) - 5)
+  if (state.isRunning != true) {
+    timer.updateDisplay(Number(minutes.textContent) - 5)    
+  }
 }
 
 export function setMinutes() {
